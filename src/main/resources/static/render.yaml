@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: mi-app-spring
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean package"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: DATABASE_URL
+        value: jdbc:mysql://tu-servidor:3306/tu_bd
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
